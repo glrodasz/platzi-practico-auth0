@@ -1,0 +1,86 @@
+[
+  {
+    "genre": "Horror",
+    "title": "Hereditary",
+    "description": "A grieving family is haunted by tragic and disturbing occurrences.",
+    "releaseYear": 2018,
+    "unsplashId": "WXX_DhjlmD4"
+  },
+  {
+    "genre": "Horror",
+    "title": "It Follows",
+    "description": "A young woman is followed by an unknown supernatural force after a sexual encounter.",
+    "releaseYear": 2014,
+    "unsplashId": "rnr8D3FNUNY"
+  },
+  {
+    "genre": "Horror",
+    "title": "The Witch",
+    "description": "A family in 1630s New England is torn apart by the forces of witchcraft, black magic and possession.",
+    "releaseYear": 2015,
+    "unsplashId": "KAsjiTRuihk"
+  },
+  {
+    "genre": "Horror",
+    "title": "The Neon Demon",
+    "description": "An aspiring model, Jesse, is new to Los Angeles. However, her beauty and youth, which generate intense fascination and jealousy within the fashion industry, may prove themselves sinister.",
+    "releaseYear": 2016,
+    "unsplashId": "PGdMhonLLZk"
+  },
+  {
+    "genre": "Thriller",
+    "title": "Memento",
+    "description": "A man with short-term memory loss attempts to track down his wife's murderer.",
+    "releaseYear": 2000,
+    "unsplashId": "P2aOvMMUJnY"
+  },
+  {
+    "genre": "Thriller",
+    "title": "Inception",
+    "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
+    "releaseYear": 2010,
+    "unsplashId": "dwFOqsbUQcM"
+  },
+  {
+    "genre": "Thriller",
+    "title": "Interstellar",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "releaseYear": 2014,
+    "unsplashId": "yZygONrUBe8"
+  },
+  {
+    "genre": "Thriller",
+    "title": "Joker",
+    "description": "A mentally troubled stand-up comedian embarks on a downward spiral that leads to the creation of an iconic villain.",
+    "releaseYear": 2019,
+    "unsplashId": "cpjfJjJ8TLY"
+  },
+  {
+    "genre": "Thriller",
+    "title": "Parasite",
+    "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "releaseYear": 2019,
+    "unsplashId": "LhHqPDsREOI"
+  },
+  {
+    "genre": "Thriller",
+    "title": "The Prestige",
+    "description": "After a tragic accident, two stage magicians in 1890s London engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.",
+    "releaseYear": 2006,
+    "unsplashId": "P787-xixGio"
+  },
+  {
+    "genre": "Thriller",
+    "title": "Nightwatch",
+    "description": "A law student takes a job as a night watchman at a morgue and begins to discover clues that implicate him as the suspect in a series of murders.",
+    "releaseYear": 1998,
+    "unsplashId": "GofYo51GQ_4"
+  },
+  {
+    "genre": "Thriller",
+    "title": "Distric 9",
+    "description": "Violence ensues after an extraterrestrial race forced to live in slum-like conditions on Earth finds a kindred spirit in a government agent exposed to their biotechnology.",
+    "releaseYear": 2009,
+    "unsplashId": "pZ-XFIrJMtE"
+  }
+]
