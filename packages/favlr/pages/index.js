@@ -1,5 +1,9 @@
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+
 import Tabs from "@/components/Tabs";
 import useMovies from "@/hooks/useMovies";
+
+export const getServerSideProps = withPageAuthRequired();
 
 export default function Home() {
   const { movies } = useMovies();
