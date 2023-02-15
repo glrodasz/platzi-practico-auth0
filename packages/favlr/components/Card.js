@@ -2,7 +2,7 @@ const Card = ({ title, description, unsplashId, releaseYear}) => {
   return (
     <div className="font-sans text-slate-300 bg-slate-700 overflow-hidden border-b-4 border-blue-500 w-full mb-10 shadow-xl">
       <img
-        src={`${process.env.NEXT_PUBLIC_PROXY_SERVER_URL}/images/${unsplashId}`}
+        src={`api/images/${unsplashId}`}
         alt="People"
         className="w-full object-cover h-32 sm:h-48 md:h-64"
       />

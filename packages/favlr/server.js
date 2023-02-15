@@ -6,6 +6,7 @@ dotenv.config({ path: ".env.local" });
 const express = require("express");
 const fetch = require("node-fetch");
 const { createApi } = require("unsplash-js");
+const { auth, requiredScopes } = require("express-oauth2-jwt-bearer");
 
 // Declare PORT from env variable
 const PORT = process.env.PROXY_SERVER_PORT;
@@ -20,8 +21,15 @@ const unsplash = createApi({
   fetch,
 });
 
+const jwtCheck = auth({
+  audience: process.env.AUTH0_AUDIENCE,
+  issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL
+})
+
+const checkScopes = requiredScopes(["read:images"]);
+
 // Get images from Unsplash
-app.get("/images/:imageId", async (req, res) => {
+app.get("/images/:imageId", jwtCheck, checkScopes, async (req, res) => {
   const photoId = req.params.imageId;
 
   try {
