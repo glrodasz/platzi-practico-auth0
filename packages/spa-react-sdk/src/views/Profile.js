@@ -3,10 +3,10 @@ import { Container, Row, Col } from "reactstrap";
 
 import Highlight from "../components/Highlight";
 import Loading from "../components/Loading";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 export const ProfileComponent = () => {
-  // FIXME: Get the values from the useAuth0 hook
-  const { user } = null;
+  const { user } = useAuth0();
 
   return (
     <Container className="mb-5">
@@ -30,5 +30,6 @@ export const ProfileComponent = () => {
   );
 };
 
-// TODO: Add the withAuthenticationRequired HOC
-export default ProfileComponent
+export default withAuthenticationRequired(ProfileComponent, {
+  onRedirecting: () => <Loading />,
+});

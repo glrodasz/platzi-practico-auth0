@@ -5,6 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import history from "./utils/history";
 import { getConfig } from "./config";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const onRedirectCallback = (appState) => {
   history.push(
@@ -16,19 +17,22 @@ const onRedirectCallback = (appState) => {
 // for a full list of the available properties on the provider
 const config = getConfig();
 
-// FIXME: Set the providerConfig to the correct values
 const providerConfig = {
-  domain: null,
-  clientId: null,
+  domain: config.domain,
+  clientId: config.clientId,
   onRedirectCallback,
   authorizationParams: {
-    redirect_uri: null,
+    redirect_uri: window.location.origin,
     ...(config.audience ? { audience: config.audience } : null),
   },
 };
 
-// TODO: Add the Auth0Provider component
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <Auth0Provider {...providerConfig}>
+    <App />
+  </Auth0Provider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

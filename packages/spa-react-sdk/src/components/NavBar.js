@@ -18,6 +18,8 @@ import {
   DropdownItem,
 } from "reactstrap";
 
+import { useAuth0 } from "@auth0/auth0-react"
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   // FIXME: Get the values from the useAuth0 hook
@@ -26,7 +28,7 @@ const NavBar = () => {
     isAuthenticated,
     loginWithRedirect,
     logout,
-  } = null;
+  } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
 
   const logoutWithRedirect = () =>
