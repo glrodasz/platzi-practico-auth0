@@ -5,6 +5,8 @@ const logger = require('morgan');
 const path = require('path');
 const router = require('./routes/index');
 
+const { auth } = require('express-openid-connect');
+
 dotenv.load();
 
 const app = express();
@@ -16,21 +18,21 @@ app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-// TODO: Set the authRequire to false and auth0Logout options to true
-const config = {};
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+};
 
 const port = process.env.PORT || 3000;
 if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.NODE_ENV !== 'production') {
   config.baseURL = `http://localhost:${port}`;
 }
 
-// TODO: use auth middleware
-app.use(null);
+app.use(auth(config));
 
 // Middleware to make the `user` object available for all views
 app.use(function (req, res, next) {
-  // FIXME: set the locals user to the OIDC users
-  res.locals.user = null;
+  res.locals.user = req.oidc.user;
   next();
 });
 
