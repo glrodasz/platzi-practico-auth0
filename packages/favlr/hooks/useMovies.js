@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { collection, onSnapshot, query } from "firebase/firestore";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 
-import { db } from "../firebase";
+import { db, auth, signInWithCustomToken } from "../firebase";
 
 const useMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -11,7 +11,16 @@ const useMovies = () => {
 
     async function getMovies() {
       try {
-        const queryCollection = await query(collection(db, "movies"));
+        const { firebaseToken, userClaims } = await fetch("/api/firebase").then(
+          (data) => data.json()
+        );
+
+        await signInWithCustomToken(auth, firebaseToken);
+
+        const queryCollection = await query(
+          collection(db, "movies"),
+          where("genre", "in", userClaims.genres)
+        );
 
         unsubscribe = onSnapshot(queryCollection, (querySnapshot) => {
           setMovies(

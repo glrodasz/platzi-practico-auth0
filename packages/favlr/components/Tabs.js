@@ -2,6 +2,8 @@ import { useState } from "react";
 import Card from "./Card";
 import Avatar from "./Avatar";
 
+const Empty = ({ show }) => show ? <p>There are not movies a this time.</p> : null;
+
 const Tab = ({ title, isSelected, icon, onClick }) => (
   <li className="mr-2">
     <a
@@ -82,6 +84,7 @@ const Tabs = ({ thrillerMovies, horrorMovies }) => {
           {thrillerMovies.map((movie) => (
             <Card {...movie} />
           ))}
+          <Empty show={thrillerMovies.length === 0} />
         </article>
       )}
       {selectedTab === "horror" && (
@@ -89,6 +92,7 @@ const Tabs = ({ thrillerMovies, horrorMovies }) => {
           {horrorMovies.map((movie) => (
             <Card {...movie} />
           ))}
+          <Empty show={horrorMovies.length === 0} />
         </article>
       )}
     </section>

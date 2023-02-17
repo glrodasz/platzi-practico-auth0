@@ -1,5 +1,6 @@
 const { initializeApp } = require("firebase/app");
 const { getFirestore } = require("firebase/firestore");
+const { getAuth, signInWithCustomToken } = require("firebase/auth");
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -14,4 +15,6 @@ const app = initializeApp(firebaseConfig);
 
 module.exports = {
   db: getFirestore(app),
+  auth: getAuth(app),
+  signInWithCustomToken,
 };
